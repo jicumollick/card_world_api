@@ -54,9 +54,7 @@ const displayCards = (cards) => {
         `;
         main.appendChild(div);
     }
-
 }
-
 const cardDetails = (code) => {
     fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=52`)
         .then(res => res.json())
