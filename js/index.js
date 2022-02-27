@@ -40,13 +40,14 @@ const displayCards = (cards) => {
     for(let card of cards){
         const div = document.createElement('div');
         div.classList.add('col-md-4');
+        div.classList.add('col-sm-12');
         div.classList.add('mb-5');
         div.innerHTML = `
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="${card.image}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">${card.suit}</h5>
-                <p class="card-text">${card.code}</p>
+                <h5 class="card-title"> Suit: ${card.suit}</h5>
+                <p class="card-text"> Code: ${card.code}</p>
                 <button onclick="cardDetails('${card.code}')"  href="#" class="btn btn-primary">See Details</button>
             </div>
         </div>
@@ -63,14 +64,15 @@ const cardDetails = (code) => {
             const allCards = data.cards;
             const singleCard =  allCards.find( card => card.code == code);
             const div = document.createElement('div');
+            
             main.innerHTML = '';
             div.innerHTML = `
             <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="${singleCard.image}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">${singleCard.suit}</h5>
-                <p class="card-text">${singleCard.code}</p>
-                <p class="card-text">${singleCard.value}</p>
+                <h5 class="card-title"> Suit: ${singleCard.suit}</h5>
+                <p class="card-text"> Code: ${singleCard.code}</p>
+                <p class="card-text"> Value: ${singleCard.value}</p>
               
             </div>
         </div>
